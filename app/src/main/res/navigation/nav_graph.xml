@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/noteListView">
+
+    <fragment
+        android:id="@+id/noteListView"
+        android:name="com.ashwin.android.notespace.note.list.NoteListView"
+        android:label="NoteListFragment"
+        tools:layout="@layout/fragment_note_list">
+        <action
+            android:id="@+id/action_noteListView_to_noteDetailView"
+            app:destination="@+id/noteDetailView" />
+        <action
+            android:id="@+id/action_noteListView_to_loginActivity"
+            app:destination="@+id/loginActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/noteDetailView"
+        android:name="com.ashwin.android.notespace.note.detail.NoteDetailView"
+        android:label="NoteDetailFragment"
+        tools:layout="@layout/fragment_note_detail">
+<!--        <action-->
+<!--            android:id="@+id/action_noteDetailView_to_noteListView"-->
+<!--            app:destination="@id/noteListView" />-->
+        <argument
+            android:name="note_id"
+            app:argType="string" />
+    </fragment>
+
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.ashwin.android.notespace.login.LoginActivity"
+        android:label="LoginActivity"
+        tools:layout="@layout/fragment_login"/>
+</navigation>
